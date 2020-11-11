@@ -1,10 +1,13 @@
 const container = document.getElementById("container");
+let startRows = prompt("How many rows and columns would you like?");
 
-function removeColor() {
-  document.querySelectorAll('.box').forEach(item => {
-    item.classList.remove("box-after");
-})
+function newGrid() {
+  let pixels = container.querySelectorAll('div');
+  pixels.forEach(pixel => pixel.remove());
+  let newRows = prompt("How many rows and columns would you like?");
+  makeRows(newRows, newRows);
 }
+
 
 function makeRows(rows, cols) {
   container.style.setProperty('--grid-rows', rows);
@@ -13,22 +16,20 @@ function makeRows(rows, cols) {
     let cell = document.createElement("div");
     container.appendChild(cell).className = "box";
   };
+document.querySelectorAll('.box').forEach(item => {
+  item.addEventListener('mouseover', event => {
+    item.classList.add("box-after"); 
+  })
+});
 };
 
 
-let rows = prompt("How many rows and columns would you like?");
-makeRows(rows, rows);
+
+makeRows(startRows, startRows);
+
+
+document.getElementById("clear").addEventListener("click", newGrid);
 
 
 
 
-
-
-document.querySelectorAll('.box').forEach(item => {
-  item.addEventListener('mouseover', event => {
-    item.classList.add("box-after");
-    
-  })
-});
-
-document.getElementById("clear").addEventListener("click", removeColor);
