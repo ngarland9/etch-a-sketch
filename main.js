@@ -1,5 +1,7 @@
 const container = document.getElementById("container");
 let startRows = 16;
+let config = "normal"
+
 
 function newGrid() {
   let pixels = container.querySelectorAll('div');
@@ -22,9 +24,15 @@ function makeRows(rows, cols) {
     let cell = document.createElement("div");
     container.appendChild(cell).className = "box";
   };
+
+
 document.querySelectorAll('.box').forEach(item => {
   item.addEventListener('mouseover', event => {
-    item.classList.add("box-after"); 
+    if (config == "normal") {
+      item.classList.add("box-after");
+    }
+    else {
+      item.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;}
   })
 });
 };
@@ -36,6 +44,10 @@ makeRows(startRows, startRows);
 
 document.getElementById("clear").addEventListener("click", newGrid);
 
+document.getElementById("rainbow").addEventListener("click", function() {
+  config = "rainbow";
+})
 
-
-
+document.getElementById("normal").addEventListener("click", function() {
+  config = "normal";
+})

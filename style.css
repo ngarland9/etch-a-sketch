@@ -30,7 +30,9 @@
   background-color:black;
   
 }
-
+.box-after-rainbow {
+  background-color: 
+}
 #clear {
   border-radius: 5%;
   background-color: orangered;
@@ -105,4 +107,22 @@
 
 body {
   background-image: url("images/ee0fb5a201e5a82ec077d00f38d6c0f4.jpg");
+}
+
+
+#normal {
+  border-radius: 5%;
+  background-color: white;
+  color: black;
+  width: 200px;
+  height: 100px;
+  font-size: 20px;
+}
+
+#rainbow {
+  background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+  width: 200px;
+  height: 100px;
+  font-size: 20px;
+  border-radius: 5%;
 }
