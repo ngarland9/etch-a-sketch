@@ -1,11 +1,17 @@
 const container = document.getElementById("container");
-let startRows = prompt("How many rows and columns would you like?");
+let startRows = 16;
 
 function newGrid() {
   let pixels = container.querySelectorAll('div');
   pixels.forEach(pixel => pixel.remove());
   let newRows = prompt("How many rows and columns would you like?");
+  if (newRows > 100) {
+    alert("Too many rows! You broke it stupid! Choose less than 100.")
+    makeRows(startRows, startRows);
+  }
+  else {
   makeRows(newRows, newRows);
+  }
 }
 
 
