@@ -32,6 +32,7 @@ document.querySelectorAll('.box').forEach(item => {
       item.classList.add("box-after");
     }
     else {
+      item.classList.remove("box-after");
       item.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;}
   })
 });
